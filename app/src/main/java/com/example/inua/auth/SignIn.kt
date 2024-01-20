@@ -27,7 +27,8 @@ class SignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
+        //HIDE ACTION BAR
+        supportActionBar?.hide()
         FirebaseApp.initializeApp(this)
         signIn = findViewById(R.id.login)
 
