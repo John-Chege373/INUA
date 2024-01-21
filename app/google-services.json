@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819664369106",
+    "project_id": "inua-78b30",
+    "storage_bucket": "inua-78b30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819664369106:android:4e8ca73c0f101ab1e9840b",
+        "android_client_info": {
+          "package_name": "com.example.inua"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1G_m1DuQW0kuZSG6zezOmiB7dEv3dbEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
