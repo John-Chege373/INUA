@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">INUA</string>
+    <string name="sign_in">Sign In</string>
+    <string name="inua">Inua</string>
+    <string name="to">to</string>
+    <string name="welcome">Welcome</string>
+    <string name="default_web_client_id">xxxxxxx</string>
 </resources>
