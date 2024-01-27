@@ -1,4 +1,4 @@
-package com.example.inua.Constants
+package com.example.inua.utils
 
 class Constants {
 
