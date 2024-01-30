@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import com.example.inua.Constants.Constants
+import com.example.inua.utils.Constants
 import com.example.inua.MainActivity
 import com.example.inua.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
