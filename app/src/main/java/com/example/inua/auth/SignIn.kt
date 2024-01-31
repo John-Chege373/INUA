@@ -80,5 +80,20 @@ class SignIn : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        val account = GoogleSignIn.getLastSignedInAccount(this)
+        if (account != null) {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
 
 }
