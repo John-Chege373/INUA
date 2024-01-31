@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Edit Profile"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/viewDonations"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="View Donations"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
 
         <Button
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Logout"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
 
     </LinearLayout>
