@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.inua.MainActivity
 import com.example.inua.R
 import com.example.inua.auth.SignIn
 import com.example.inua.databinding.FragmentProfileBinding
@@ -42,6 +43,7 @@ class ProfileFragment : Fragment() {
 
         }
 
+
         binding.viewDonations.setOnClickListener {
             val donationsFragment = DonationsFragment()
 
@@ -51,6 +53,7 @@ class ProfileFragment : Fragment() {
                 .replace(R.id.flFragment, donationsFragment)
                 .addToBackStack(null)
                 .commit()
+            (activity as? MainActivity)?.selectedBottomNavigationItem(R.id.donations)
         }
 
         binding.logout.setOnClickListener {
@@ -60,6 +63,10 @@ class ProfileFragment : Fragment() {
                     if (it.isSuccessful) {
                         val intent = Intent(activity, SignIn::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        Toast.makeText(activity,
+                            "Logging out",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         startActivity(intent)
                         activity?.finish()
                     } else {
