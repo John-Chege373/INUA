@@ -26,9 +26,8 @@ class MainActivity : AppCompatActivity() {
         val mapsFragment = MapsFragment()
         val profileFragment = ProfileFragment()
 
-        bottomNavigationBarView = findViewById(R.id.bottom_navigation)
 
-        bottomNavigationBarView.setOnItemSelectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.home -> {
                     setCurrentFragment(homeFragment)
