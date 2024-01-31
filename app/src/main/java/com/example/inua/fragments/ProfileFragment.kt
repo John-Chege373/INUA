@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.inua.R
 import com.example.inua.auth.SignIn
 import com.example.inua.databinding.FragmentProfileBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -42,7 +43,14 @@ class ProfileFragment : Fragment() {
         }
 
         binding.viewDonations.setOnClickListener {
+            val donationsFragment = DonationsFragment()
 
+            requireActivity()
+                .supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.flFragment, donationsFragment)
+                .addToBackStack(null)
+                .commit()
         }
 
         binding.logout.setOnClickListener {
