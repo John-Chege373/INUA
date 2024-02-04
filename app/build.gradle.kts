@@ -56,4 +56,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.squareup.picasso:picasso:2.8")
+    //MPESA
+    implementation("com.androidstudy.daraja:daraja:2.0.2")
 }
