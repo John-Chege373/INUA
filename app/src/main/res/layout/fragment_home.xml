@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".fragments.HomeFragment">
 
     <TextView
@@ -11,6 +12,9 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_message"
         android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:padding="8dp"
         android:layout_marginBottom="16dp"/>
 
 </FrameLayout>
