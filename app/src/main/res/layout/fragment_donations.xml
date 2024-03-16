@@ -6,10 +6,6 @@
     android:orientation="vertical"
     tools:context=".fragments.DonationsFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-
-
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
@@ -34,8 +30,6 @@
             android:layout_marginTop="16dp"
             android:hint="Total Amount"
             android:inputType="number" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/bPay"
