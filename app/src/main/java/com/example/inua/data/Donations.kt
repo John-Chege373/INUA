@@ -1,3 +1,5 @@
 package com.example.inua.data
 
-class Donations : ArrayList<DonationsItem>()
+data class Donations(
+    val organizations: List<Organization>
+)
