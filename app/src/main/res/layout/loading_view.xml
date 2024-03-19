@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Please wait..."
+        android:text="@string/please_wait"
         android:textColor="#333333"
         android:textSize="14sp" />
 
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="Fetching Details"
+        android:text="@string/fetching_details"
         android:textColor="#666666"
         android:textSize="13sp" />
 
