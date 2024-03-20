@@ -8,10 +8,11 @@
     <string name="donations">Donations</string>
     <string name="map">Map</string>
     <string name="profile">Profile</string>
-    <string name="welcome_message">Welcome, %1$s!</string>
+    <string name="welcome_message">Welcome, %1$s</string>
     <string name="default_web_client_id">828162669421-gd67lhktfrhvbnj1i8pj9od8216tjtsh.apps.googleusercontent.com</string>
     <string name="please_wait">Please wait...</string>
     <string name="fetching_details">Fetching Details</string>
     <string name="view_donation">View Donation</string>
+    <string name="logo">logo</string>
 
 </resources>

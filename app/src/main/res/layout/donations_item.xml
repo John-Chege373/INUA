@@ -26,14 +26,15 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
+                app:srcCompat="@drawable/logo"
+                android:contentDescription="@string/logo" />
 
             <TextView
                 android:id="@+id/donationName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="TextView"
+                android:text=""
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold"
                 android:textSize="18sp"
@@ -46,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
-                android:text="TextView"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
