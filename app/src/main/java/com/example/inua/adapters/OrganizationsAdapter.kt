@@ -11,6 +11,11 @@ import com.squareup.picasso.Picasso
 class OrganizationsAdapter(private var organizations: List<Organization>) :
     RecyclerView.Adapter<OrganizationsAdapter.OrganizationViewHolder>() {
 
+    interface OnItemButtonClickListener {
+        fun onItemButtonClick(organization: Organization)
+    }
+    var itemButtonClickListener: OnItemButtonClickListener? = null
+
     class OrganizationViewHolder(val binding: DonationsItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrganizationViewHolder {
@@ -25,6 +30,10 @@ class OrganizationsAdapter(private var organizations: List<Organization>) :
             shortDescription.text = currentItem.shortDescription
             Picasso.get().load(currentItem.image).into(imageView)
             // If you have set up any click listeners for the view, they remain here.
+            viewDonation.setOnClickListener {
+                itemButtonClickListener?.onItemButtonClick(currentItem)
+            }
+
         }
     }
 
