@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OrganizationsAdapter.OnItemButtonClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -27,28 +27,27 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         val account = GoogleSignIn.getLastSignedInAccount(requireContext())
-
         account?.let {
             val username = it.displayName ?: "User"
             binding.userName.text = getString(R.string.welcome_message, username)
+        }
+        binding.progressBar.visibility = View.VISIBLE
 
+        // Initialize your OrganizationsAdapter here and set the itemButtonClickListener
+        val organizationsAdapter = OrganizationsAdapter(emptyList()).apply {
+            itemButtonClickListener = this@HomeFragment
         }
 
-        val organizationsAdapter = OrganizationsAdapter(emptyList()) // Initially empty list
+        // Set up the RecyclerView
         binding.donationsList.apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = organizationsAdapter
         }
-        //SHOW DONATIONS
+
+        // Fetch organizations from Firebase and update the RecyclerView
         fetchOrganizationsFromFirebase()
+        return binding.root
 
     }
 
@@ -64,10 +63,13 @@ class HomeFragment : Fragment() {
                     }
                 }
                 updateOrganizationsList(organizationsList)
+                binding.progressBar.visibility = View.GONE
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.w("HomeFragment", "loadPost:onCancelled", databaseError.toException())
+
+                binding.progressBar.visibility = View.GONE
             }
         })
     }
@@ -77,6 +79,18 @@ class HomeFragment : Fragment() {
             val adapter = binding.donationsList.adapter as? OrganizationsAdapter
             adapter?.updateOrganizations(organizations)
         }
+    }
+
+    override fun onItemButtonClick(organization: Organization) {
+        val detailsFragment = ViewDonation().apply {
+            arguments = Bundle().apply {
+                putParcelable("organization", organization)
+            }
+        }
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.flFragment, detailsFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
 }
