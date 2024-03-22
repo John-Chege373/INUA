@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         val mapsFragment = MapsFragment()
         val profileFragment = ProfileFragment()
 
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.flFragment, HomeFragment())
+            .commit()
+
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when(it.itemId) {
