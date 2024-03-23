@@ -14,5 +14,6 @@
     <string name="fetching_details">Fetching Details</string>
     <string name="view_donation">View Donation</string>
     <string name="logo">logo</string>
+    <string name="image">image</string>
 
 </resources>
