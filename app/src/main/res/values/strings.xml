@@ -15,5 +15,10 @@
     <string name="view_donation">View Donation</string>
     <string name="logo">logo</string>
     <string name="image">image</string>
+    <string name="make_a_donation">Make A Donation</string>
+    <string name="address_format">Address: %1$s</string>
+    <string name="email_format">Email: %1$s</string>
+    <string name="phone_format">Phone: %1$s</string>
+
 
 </resources>

@@ -34,6 +34,10 @@ class ViewDonation : Fragment() {
             binding.donationName.text = it.name
             binding.longDescription.text = it.longDescription
             Picasso.get().load(it.image).into(binding.imageView)
+            //CONTACT INFO
+            binding.email.text = getString(R.string.email_format, it.contactInfo.email)
+            binding.phone.text = getString(R.string.phone_format, it.contactInfo.phone)
+            binding.address.text = getString(R.string.address_format, it.contactInfo.address)
             binding.progressBar.visibility = View.GONE
         }
 
