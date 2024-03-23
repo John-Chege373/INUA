@@ -5,11 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.inua.MainActivity
 import com.example.inua.R
 import com.example.inua.data.Organization
 import com.example.inua.databinding.FragmentViewDonationBinding
 import com.squareup.picasso.Picasso
 
+@Suppress("DEPRECATION")
 class ViewDonation : Fragment() {
 
     private var _binding: FragmentViewDonationBinding? = null
@@ -34,10 +36,13 @@ class ViewDonation : Fragment() {
             Picasso.get().load(it.image).into(binding.imageView)
             binding.progressBar.visibility = View.GONE
         }
+
+        (activity as? MainActivity)?.setBottomNavigationVisibility(false)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // To avoid memory leaks
+        (activity as? MainActivity)?.setBottomNavigationVisibility(true)
     }
 }

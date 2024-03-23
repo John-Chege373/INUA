@@ -53,7 +53,7 @@ class ProfileFragment : Fragment() {
                 .replace(R.id.flFragment, donationsFragment)
                 .addToBackStack(null)
                 .commit()
-            (activity as? MainActivity)?.selectedBottomNavigationItem(R.id.donations)
+            (activity as? MainActivity)?.setBottomNavigationVisibility(true)
         }
 
         binding.logout.setOnClickListener {
