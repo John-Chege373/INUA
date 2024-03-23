@@ -1,5 +1,6 @@
 package com.example.inua.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import com.example.inua.MainActivity
 import com.example.inua.R
 import com.example.inua.data.Organization
+import com.example.inua.databinding.DialogMakeDonationBinding
 import com.example.inua.databinding.FragmentViewDonationBinding
 import com.squareup.picasso.Picasso
 
@@ -41,8 +43,35 @@ class ViewDonation : Fragment() {
             binding.progressBar.visibility = View.GONE
         }
 
+        binding.makeDonation.setOnClickListener {
+            organization?.let { org ->
+                showDonationDialog(org)
+            }
+        }
+
         (activity as? MainActivity)?.setBottomNavigationVisibility(false)
     }
+
+
+    private fun showDonationDialog(organization: Organization) {
+        val dialogBinding = DialogMakeDonationBinding.inflate(layoutInflater)
+        val builder = AlertDialog.Builder(requireContext())
+            .setTitle("Make a Donation to ${organization.name}")
+            .setView(dialogBinding.root)
+
+        val alertDialog = builder.create()
+
+        dialogBinding.confirmButton.setOnClickListener {
+            val amount = dialogBinding.amountEditText.text.toString()
+            val paymentDetails = dialogBinding.detailsEditText.text.toString()
+            // Here, you'd handle the donation logic...
+            alertDialog.dismiss()
+            // Example: navigateToDonationFragment(amount, paymentDetails)
+        }
+
+        alertDialog.show()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
