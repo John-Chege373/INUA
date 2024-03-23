@@ -19,6 +19,7 @@
     <string name="address_format">Address: %1$s</string>
     <string name="email_format">Email: %1$s</string>
     <string name="phone_format">Phone: %1$s</string>
+    <string name="contact_info">CONTACT INFO:</string>
 
 
 </resources>
