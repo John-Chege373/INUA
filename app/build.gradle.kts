@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.example.inua"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -23,6 +23,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {
@@ -60,4 +61,7 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.8")
     //MPESA
     implementation("com.androidstudy.daraja:daraja:2.0.2")
+    //PLACES
+    implementation("com.google.android.libraries.places:places:3.4.0")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
 }
