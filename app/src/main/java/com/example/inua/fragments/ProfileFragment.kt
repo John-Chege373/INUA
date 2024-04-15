@@ -1,6 +1,7 @@
 package com.example.inua.fragments
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,10 +38,6 @@ class ProfileFragment : Fragment() {
         account?.let {
             Picasso.get().load(it.photoUrl).into(binding.imgProfile)
             binding.userName.text = it.displayName
-        }
-
-        binding.editProfile.setOnClickListener {
-
         }
 
 
